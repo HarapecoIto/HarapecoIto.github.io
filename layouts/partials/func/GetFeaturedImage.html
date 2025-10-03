@@ -18,20 +18,22 @@
 {{/* Declare a new string variable, $linkToCover */}}
 {{ $linkToCover := "" }}
 {{ $matches := "feature,cover" }}
-{{/* Use the value from front matter if present */}}
-{{ with .Params.featured_image }}
-  {{/* This is the default case, the image lives in the static directory.
-    In which case we'll use the static dir */}}
-  {{ $linkToCover = strings.Trim . "/" | urls.AbsURL }}
-  {{/* If we find a Page Resource matching the exact value, we use it instead. */}}
-  {{ with $.Resources.GetMatch . }}
-    {{ $linkToCover = .RelPermalink }}
-  {{ end }}
-{{/* Find the first image with 'cover' in the name in this page bundle. */}}
+{{/* 1. サイト全体のカバー画像を優先 */}}
+{{ with site.Params.featured_image.path }}
+  {{ $linkToCover = . }}
 {{ else }}
-  {{ with .Resources.ByType "image" }}
-    {{ with .GetMatch (fmt.Printf "**{%s}*" $matches) }}
+  {{/* 2. ページのfront matter */}}
+  {{ with .Params.featured_image }}
+    {{ $linkToCover = strings.Trim . "/" | urls.AbsURL }}
+    {{ with $.Resources.GetMatch . }}
       {{ $linkToCover = .RelPermalink }}
+    {{ end }}
+  {{ else }}
+    {{/* 3. ページバンドル内のcover画像 */}}
+    {{ with .Resources.ByType "image" }}
+      {{ with .GetMatch (fmt.Printf "**{%s}*" $matches) }}
+        {{ $linkToCover = .RelPermalink }}
+      {{ end }}
     {{ end }}
   {{ end }}
 {{ end }}
