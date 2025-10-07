@@ -1,0 +1,28 @@
+/***************************************************************
+ * Site Header
+ **************************************************************/
+h1.lh-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #8c92c8 !important;
+}
+h2.lh-copy {
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  color: #8c92c8 !important;
+}
+.lh-copy blockquote {
+  display: block;
+  font-size: 0.875em;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+}
+
+/***************************************************************
+ * Global Navigation
+ **************************************************************/

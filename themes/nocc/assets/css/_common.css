@@ -1,0 +1,75 @@
+/***************************************************************
+ * Pagenation
+ **************************************************************/
+.pagination {
+  margin: 3rem 0;
+}
+.pagination li {
+  display: inline-block;
+  margin-right: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 2.5em;
+}
+[dir="rtl"] .pagination li {
+  margin-left: 0.375rem;
+  margin-right: 0;
+}
+.pagination li a {
+  padding: 0.5rem 0.625rem;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.pagination li.disabled {
+  display: none;
+}
+.pagination li.active a,
+.pagination li.active a:link,
+.pagination li.active a:active,
+.pagination li.active a:visited {
+  background-color: #ddd;
+}
+
+/***************************************************************
+ * Code
+ **************************************************************/
+.pagination,
+.pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow: scroll;
+}
+pre code {
+  display: block;
+  padding: 1.5em 1.5em;
+  white-space: pre;
+  font-size: 0.875rem;
+  line-height: 2;
+}
+pre {
+  background-color: #222;
+  color: #ddd;
+  white-space: pre;
+
+  hyphens: none;
+  position: relative;
+}
+
+/***************************************************************
+ * Table of Contents
+ **************************************************************/
+#TableOfContents ul li {
+  margin-bottom: 1em;
+}
+#TableOfContents ul li {
+  margin-bottom: 1em;
+}
+
+/***************************************************************
+ * Others
+ **************************************************************/
+.nested-links a {
+  overflow-wrap: break-word;
+}
