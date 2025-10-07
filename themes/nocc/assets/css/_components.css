@@ -1,6 +1,11 @@
 /***************************************************************
  * Site Header
  **************************************************************/
+header {
+  aspect-ratio: 4 / 1;
+  width: 100%;
+  background-position: center center;
+}
 h1.lh-title {
   margin: 0;
   font-size: 2rem;
