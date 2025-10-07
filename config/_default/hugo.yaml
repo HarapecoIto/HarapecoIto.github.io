@@ -7,6 +7,6 @@ params:
   author: "Harapeco Club"
   description: "個人情報の漏洩を防止する CC: のないメールクライアント"
   featured_image:
-    path: "/images/cover/cover-2812x1875.jpg"
+    path: "/images/cover/cover-2400x600.jpg"
 
 theme: nocc
