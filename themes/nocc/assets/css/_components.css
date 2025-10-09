@@ -2,35 +2,23 @@
  * Site Header
  **************************************************************/
 header {
-  aspect-ratio: 4 / 1;
-  width: 100%;
-  background-position: center center;
+  position: relative;
+  overflow: hidden;
 }
-header h1 {
-  margin-bottom: 0 !important;
-  margin-top: 0 !important;
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
 }
-header h1 .my-appli-title :first-child {
-  color: red !important;
-  font-size: 5rem !important;
-  font-weight: 800 !important;
-}
-header h1 .my-appli-title :last-child {
-  color: white !important;
-  font-size: 5rem !important;
-  font-weight: 800 !important;
-}
-header h1 .my-appli-sub-title {
-  color: #333333 !important;
-  font-size: 4.5rem !important;
-  font-weight: 600 !important;
-}
+
+header h1,
 header h2 {
-  color: #8c92c8 !important;
-  color: #86c09a !important;
-  color: black !important;
-  font-size: 3rem !important;
-  font-weight: 500 !important;
+  position: relative;
+  z-index: 1;
+  text-shadow: 6px 6px 16px rgba(0, 0, 0, 0.8);
 }
 
 /***************************************************************
