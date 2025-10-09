@@ -1,4 +1,5 @@
 title: "NoCC: メール"
+theme: nocc
 
 baseURL: https://example.org/
 languageCode: "ja-jp"
@@ -7,6 +8,19 @@ params:
   author: "Harapeco Club"
   description: "個人情報の漏洩を防止する CC: のないメールクライアント"
   featured_image:
-    path: "/images/cover/cover-2400x600.jpg"
+    path: "/images/cover/cover-2812x1875.jpg"
 
-theme: nocc
+menus:
+  main:
+    - name: "NoCC:メール"
+      pageRef: /
+      weight: 10
+    - name: "ダウンロード"
+      pageRef: /download
+      weight: 20
+    - name: "使い方"
+      pageRef: /howto
+      weight: 30
+    - name: "プレミアム"
+      pageRef: /premium
+      weight: 40
