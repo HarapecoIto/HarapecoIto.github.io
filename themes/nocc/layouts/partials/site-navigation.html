@@ -2,8 +2,8 @@
   <div class="flex justify-around">
     {{ if .Site.Menus.main }}
       <ul>
-        {{ range $idx, $mi := .Site.Menus.main }}
-        <li class="mv0 link f3 f3-ns dib mr3 lh-copy {{ if $idx }}ml3{{ end }}">
+        {{ range .Site.Menus.main }}
+        <li class="mv0 f3 f3-ns dib lh-copy ml3 mr3">
           <a class="dark-gray hover-silver link" href="{{ .URL }}" title="{{ lang.Translate "pageTitle" . }}">
             {{ .Name }}
           </a>
