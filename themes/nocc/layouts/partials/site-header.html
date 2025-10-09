@@ -1,23 +1,27 @@
 {{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
 {{ if $featured_image }}
-  {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image_class := site.Params.featured_image_class | compare.Default "cover bg-top" }}
-  <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}');">
-    {{ $cover_dimming_class := site.Params.cover_dimming_class | compare.Default "bg-white-0" }}
-    <div class="{{ $cover_dimming_class }}">
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
-        <h1 class="fw4 f1 f-subheadline-l lh-title">
-          <span class="my-appli-title"><span>No</span><span>CC:</span></span>
-          <span class="my-appli-sub-title">メール</span>
-        </h1>
-        <h2 class="fw4 f2 measure-wide-l center mt3">
-          ✅電子メールの誤送信による個人情報の漏洩を防ぐ
-        </h2>
-      </div>
+  <header class="flex justify-center items-center cover bg-center" style="background-image: url('{{ $featured_image }}');">
+    <div class="h-100 tl tc-l pv3-ns pv4 pv5-l ph3 ph4-ns">
+      <h1 class="mt3 mb0 fw7 f1 f-subheadline-l lh-title">
+        <span class="red"><span>No</span><span class="white">CC:</span></span>
+        <span class="white">メール</span>
+      </h1>
+      <h2 class="mt3 mb4 fw6 f2 white measure-wide-l center">
+        ✅電子メールの誤送信による個人情報の漏洩を防ぐ
+      </h2>
     </div>
   </header>
 {{ else }}
   <header>
   </header>
 {{ end }}
+<section class="pv3 ph3 ph4-ns bg-white">
+  <div class="mv1 tc f3 fw5 lh-copy">
+    🙇🏻
+    <a class="dark-gray hover-silver link underline" href="{{ .Site.Params.Search.url }}" title="{{ .Site.Params.Search.name }}" target="_blank" rel="noopener">
+      {{ .Site.Params.Search.name }}
+    </a>
+    🙇🏻‍♀️
+  </div>
+</section>
 {{ partials.Include "site-navigation.html" .}}
