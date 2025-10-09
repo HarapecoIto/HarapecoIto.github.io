@@ -1,9 +1,9 @@
 {{ if eq .Kind "ul" }}
-<ul class="list pl3 mb3">
-  {{ .Inner | safeHTML }}
-</ul>
+  <ul class="list pl3 mb3" {{- with .Attributes.style }}{{.}}{{- end}}>
+    {{ .Inner | safeHTML }}
+  </ul>
 {{ else if eq .Kind "ol" }}
-<ol class="list pl3 mb3">
-  {{ .Inner | safeHTML }}
-</ol>
+  <ol class="list pl3 mb3" {{- with .Attributes.style }}{{.}}{{- end}}>
+    {{ .Inner | safeHTML }}
+  </ol>
 {{ end }}
