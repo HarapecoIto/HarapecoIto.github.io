@@ -1,0 +1,13 @@
+{{ if eq .Level 1 }}
+  <h1 id="{{ .Anchor }}" class="system-sans-serif f2 red">
+    {{- .Text -}}
+  </h1>
+{{ else if eq .Level 2 }}
+  <h2 id="{{ .Anchor }}" class="system-sans-serif f2 blue">
+    {{- .Text -}}
+  </h2>
+{{ else }}
+  <h{{ .Level }} id="{{ .Anchor }}" class="system-sans-serif f2 red">
+    {{- .Text -}}
+  </h{{ .Level }}>
+{{ end }}
