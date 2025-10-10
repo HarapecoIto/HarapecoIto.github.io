@@ -35,3 +35,30 @@ header h2 {
 .list-bullet-sakura {
   list-style-type: "🌸";
 }
+
+/***************************************************************
+ * Table
+ **************************************************************/
+.table-scroll {
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  min-width: 700px;
+  font-weight: normal;
+}
+thead tr {
+  background-color: #ffdfdf;
+}
+tbody tr {
+  border-bottom: 1px solid #ffdfdf;
+}
+th,
+td {
+  font-weight: normal;
+  padding: 0.5em 1em;
+}
+th,
+td:first-child {
+  font-weight: bold;
+}
