@@ -64,25 +64,72 @@ td:first-child {
 }
 
 /***************************************************************
+ * Comparison Table
+ **************************************************************/
+#comparison-tabs input {
+  display: none;
+  visibility: hidden;
+}
+#comparison-tabs label {
+  display: block;
+  width: calc(100% / 4);
+  height: 50px;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  text-align: center;
+  color: #333333;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+#comparison-tabs input[type="radio"]:checked + label {
+  background-color: #5ab4bd;
+  color: #ffffff;
+}
+#comparison-tabs .tab-item {
+  display: none;
+  visibility: hidden;
+  clear: both;
+  padding: 1em;
+  overflow: hidden;
+  color: #222222;
+  background-color: #f6f6f6;
+}
+#comparison-tabs .tab-item dl {
+  margin: 0;
+  padding: 0;
+}
+#radio-application:checked ~ .tab-item[data-slug="application"],
+#radio-nocc:checked ~ .tab-item[data-slug="nocc"],
+#radio-cloud:checked ~ .tab-item[data-slug="cloud"] {
+  display: block;
+  visibility: visible;
+}
+
+/***************************************************************
  * Edition Table
  **************************************************************/
 #edition-table {
+  width: 100%;
   -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
 }
-#edition-table thead tr {
-  background-color: #ffffff;
+#edition-table thead {
+  width: auto;
 }
 #edition-table th,
 #edition-table td {
+  background-color: #ffffff;
+  border-bottom: 1px solid #5ab4bd;
+  text-align: center;
   -ms-writing-mode: lr-tb;
   writing-mode: horizontal-tb;
-  text-align: center;
-  border-bottom: 1px solid #ffdfdf;
-  width: 8em;
+  white-space: nowrap;
 }
 #edition-table th:first-child {
-  background-color: #ffdfdf;
-  width: auto;
-  width: 12em;
+  color: #333333;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
 }

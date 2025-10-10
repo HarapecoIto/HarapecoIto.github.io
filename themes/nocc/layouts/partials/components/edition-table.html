@@ -14,16 +14,16 @@
   </thead>
   <tbody class="lh-copy">
     {{ range .Site.Params.editions }}
-      <tr>
-        <th>{{ .name }}</th>
-        <td>{{ .price }}</td>
-        <td>{{ if .features.smtp }}●{{ else }}‐{{ end }}</td>
-        <td>{{ if .features.gmail }}●{{ else }}‐{{ end }}</td>
-        <td>{{ .features.sending }}</td>
-        <td>{{ if .features.import }}●{{ else }}‐{{ end }}</td>
-        <td>{{ if .features.export }}●{{ else }}‐{{ end }}</td>
-        <td>{{ if .features.injection }}●{{ else }}‐{{ end }}</td>
-        <td>{{ if .features.attachment }}●{{ else }}‐{{ end }}</td>
+      <tr data-slug="{{- .slug -}}" data-name="{{- .name -}}">
+        <th class="name">{{ .name }}</th>
+        <td class="price">{{ .price }}</td>
+        <td class="stmp">{{ if .features.smtp }}●{{ else }}‐{{ end }}</td>
+        <td class="gmail">{{ if .features.gmail }}●{{ else }}‐{{ end }}</td>
+        <td class="sending">{{ .features.sending }}</td>
+        <td class="import">{{ if .features.import }}●{{ else }}‐{{ end }}</td>
+        <td class="export">{{ if .features.export }}●{{ else }}‐{{ end }}</td>
+        <td class="injection">{{ if .features.injection }}●{{ else }}‐{{ end }}</td>
+        <td class="attachment">{{ if .features.attachment }}●{{ else }}‐{{ end }}</td>
       </tr>
     {{ end }}
   </tbody>
