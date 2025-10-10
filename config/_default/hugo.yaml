@@ -13,6 +13,30 @@ params:
     name: "今月の情報漏洩事故"
     url: "https://www.google.com/search?q=CC+BCC+%E6%B5%81%E5%87%BA&sca_esv=a420dcef264fc5ad&source=lnt&tbs=qdr:m&sa=X&ved=2ahUKEwi2z5SptZeQAxVScvUHHfIBGHcQpwV6BAgHEA0&biw=1920&bih=991"
 
+  editions:
+    - slug: standard
+      name: "スタンダード"
+      price: "無料"
+      features:
+        smtp: true
+        gmail: true
+        sending: 20
+        import: true
+        export: true
+        injection: true
+        attachment: false
+    - slug: premium
+      name: "プレミアム"
+      price: "10,000円"
+      features:
+        smtp: true
+        gmail: true
+        sending: 200
+        import: true
+        export: true
+        injection: true
+        attachment: true
+
 menus:
   main:
     - name: "NoCC:メール"

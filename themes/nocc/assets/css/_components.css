@@ -62,3 +62,27 @@ th,
 td:first-child {
   font-weight: bold;
 }
+
+/***************************************************************
+ * Edition Table
+ **************************************************************/
+#edition-table {
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+#edition-table thead tr {
+  background-color: #ffffff;
+}
+#edition-table th,
+#edition-table td {
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+  text-align: center;
+  border-bottom: 1px solid #ffdfdf;
+  width: 8em;
+}
+#edition-table th:first-child {
+  background-color: #ffdfdf;
+  width: auto;
+  width: 12em;
+}
