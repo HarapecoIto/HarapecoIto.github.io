@@ -58,6 +58,8 @@
   <body class="{{ $.Param "body_classes"  | compare.Default "avenir bg-white"}} {{ $environment }}">
 
     {{ block "header" . }}{{ partials.Include "site-header.html" .}}{{ end }}
+    {{ partials.IncludeCached "site-navigation.html" .}}
+    {{ partials.IncludeCached "link-to-google.html" .}}
     <main class="" role="main">
       {{ block "main" . }}{{ end }}
     </main>
