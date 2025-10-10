@@ -1,0 +1,10 @@
+{{ $bullet := index .Attributes "data-bullet" | default "disc" }}
+{{ if eq .Kind "ul" }}
+  <ul class="list mb3" style="list-style-type: {{ $bullet }};">
+    {{ .Inner | safeHTML }}
+  </ul>
+{{ else if eq .Kind "ol" }}
+  <ol class="list mb3">
+    {{ .Inner | safeHTML }}
+  </ol>
+{{ end }}

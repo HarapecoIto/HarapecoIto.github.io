@@ -22,5 +22,14 @@ header h2 {
 }
 
 /***************************************************************
- * Global Navigation
+ * List
  **************************************************************/
+.list-bullet-disc {
+  list-style-type: disc;
+}
+.list-bullet-check {
+  list-style-type: "✅";
+}
+.list-bullet-sakura {
+  list-style-type: "🌸";
+}

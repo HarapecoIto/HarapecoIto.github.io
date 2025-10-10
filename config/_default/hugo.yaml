@@ -27,3 +27,10 @@ menus:
     - name: "プレミアム"
       pageRef: /premium
       weight: 40
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+        inline: true
