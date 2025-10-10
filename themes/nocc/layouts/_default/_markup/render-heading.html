@@ -1,6 +1,6 @@
 {{ if eq .Level 1 }}
   <h1 id="{{ .Anchor }}" class="mt4 mb0 tc">
-    <span class="system-sans-serif f3 fw5 dib dark-gray bg-light-blue pv3 ph4" style="position: relative; width: 12em;">
+    <span class="system-sans-serif f3 fw5 dib dark-gray bg-light-pink pv3 ph4" style="position: relative; width: 12em;">
       <span style="
         position: absolute;
         bottom: -1px;
@@ -15,7 +15,7 @@
   </h1>
 {{ else if eq .Level 2 }}
   <h2 id="{{ .Anchor }}" class="mt4 mb0 tc">
-    <span class="system-sans-serif f4 fw5 dib dark-gray bg-light-pink pv3 ph4" style="position: relative; width: 12em;">
+    <span class="system-sans-serif f3 fw5 dib dark-gray bg-light-blue pv3 ph4" style="position: relative; width: 12em;">
       <span style="
         position: absolute;
         bottom: -1px;
@@ -27,8 +27,7 @@
         filter: blur(4px);">&nbsp;</span>
       <span>{{- .Text -}}</span>
     </span>
-  </h2>
-{{ else }}
+  </h2>{{ else }}
   <h{{ .Level }} id="{{ .Anchor }}" class="system-sans-serif f2 red">
     {{- .Text -}}
   </h{{ .Level }}>

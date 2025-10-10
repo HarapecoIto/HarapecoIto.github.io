@@ -2,6 +2,8 @@
  * Site Header
  **************************************************************/
 header {
+  aspect-ratio: 16 / 5;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }

@@ -6,7 +6,7 @@ languageCode: "ja-jp"
 params:
   copyright: "© 2025 Hrapeco Club"
   author: "Harapeco Club"
-  description: "個人情報の漏洩を防止する CC: のないメールクライアント"
+  description: "✅電子メールの誤送信による個人情報の漏洩を防ぐ"
   featured_image:
     path: "/images/cover/cover-2812x1875.jpg"
   search:

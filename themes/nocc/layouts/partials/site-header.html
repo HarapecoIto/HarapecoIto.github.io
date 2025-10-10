@@ -1,27 +1,24 @@
 {{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
-{{ if $featured_image }}
-  <header class="flex justify-center items-center cover bg-center" style="background-image: url('{{ $featured_image }}');">
-    <div class="h-100 tl tc-l pv3-ns pv4 pv5-l ph3 ph4-ns">
-      <h1 class="mt3 mb0 fw7 f1 f-subheadline-l lh-title">
-        <span class="red"><span>No</span><span class="white">CC:</span></span>
-        <span class="white">メール</span>
-      </h1>
-      <h2 class="mt3 mb4 fw6 f2 white measure-wide-l center">
-        ✅電子メールの誤送信による個人情報の漏洩を防ぐ
-      </h2>
-    </div>
-  </header>
-{{ else }}
-  <header>
-  </header>
-{{ end }}
-<section class="pv3 ph3 ph4-ns bg-white">
-  <div class="mv1 tc f3 fw5 lh-copy">
+<header class="flex justify-center items-center cover bg-center" style="background-image: url('{{ $featured_image }}');">
+  <div class="h-100 tl tc-l pv3-ns pv4 pv5-l ph3 ph4-ns">
+    <h1 class="mt3 mb0 fw7 f-5">
+      <span class="red"><span>No</span><span class="white">CC:</span></span>
+      <span class="white">メール</span>
+    </h1>
+    <h2 class="mt3 mb4 fw6 f2 white measure-wide-l center">
+      {{ .Params.description | compare.Default .Site.Params.description }}
+    </h2>
+  </div>
+</header>
+{{ partials.Include "site-navigation.html" .}}
+<section class="pv3 ph3 ph4-ns bg-near-white">
+  <div class="mv2 tc f3 fw5 lh-copy">
     🙇🏻
-    <a class="dark-gray hover-silver link underline" href="{{ .Site.Params.Search.url }}" title="{{ .Site.Params.Search.name }}" target="_blank" rel="noopener">
+    <a class="dark-gray hover-silver link underline"
+      href="{{ .Site.Params.Search.url }}" title="{{ .Site.Params.Search.name }}"
+      target="_blank" rel="noopener">
       {{ .Site.Params.Search.name }}
     </a>
     🙇🏻‍♀️
   </div>
 </section>
-{{ partials.Include "site-navigation.html" .}}
