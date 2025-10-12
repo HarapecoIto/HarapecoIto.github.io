@@ -2,7 +2,9 @@ title: "NoCC: メール"
 theme: nocc
 
 baseURL: "https://HarapecoIto.github.io/"
-publishDir: "docs"
+caches:
+  images:
+    dir: :cacheDir/images
 
 baseURL: https://example.org/
 languageCode: "ja-jp"
