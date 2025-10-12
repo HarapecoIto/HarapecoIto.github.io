@@ -102,21 +102,21 @@ td:first-child {
   display: block;
   visibility: visible;
 }
-#comparison-tabs .tab-item img {
+.tab-item img {
   float: left;
   width: 8em;
-  margin-right: 1em;
+  margin: 0 1em 1em 0;
 }
-
 /* tags */
 .tab-item ul {
+  display: inline;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 .tab-item li {
+  list-style: none;
+  float: left;
   position: relative;
-  display: inline-block;
   height: 36px;
   line-height: 36px;
   margin: 0 0.5em 0.3em 1em;

@@ -41,6 +41,9 @@ params:
       name: "メールソフト"
       logo: /images/comparison/mail-app.png
       features:
+        - slug: installer
+          type: feature
+          label: ダウンロード
         - slug: smtp
           type: feature
           label: SMTP
@@ -49,11 +52,14 @@ params:
           label: Gmail
         - slug: cc
           type: bad
-          label: "CC入力欄"
+          label: "CC入力欄あり"
     - slug: nocc
       name: "NoCC:"
       logo: /images/comparison/NoCC.png
       features:
+        - slug: installer
+          type: feature
+          label: ダウンロード
         - slug: smtp
           type: feature
           label: SMTP
@@ -62,11 +68,14 @@ params:
           label: Gmail
         - slug: cc
           type: bad
-          label: "CC入力欄"
+          label: "CC入力欄なし"
     - slug: cloud
       name: "クラウドツール"
       logo: /images/comparison/cloud-tool.png
       features:
+        - slug: installer
+          type: feature
+          label: クラウド
         - slug: smtp
           type: feature
           label: SMTP
@@ -75,7 +84,7 @@ params:
           label: Gmail
         - slug: cc
           type: bad
-          label: "CC入力欄"
+          label: "CC入力欄なし"
 
 menus:
   main:
