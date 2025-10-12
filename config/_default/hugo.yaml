@@ -33,7 +33,7 @@ params:
         html: false
     - slug: premium
       name: "プレミアム"
-      price: "10,000円"
+      price: "10,000円（永年）"
       features:
         smtp: true
         gmail: true
