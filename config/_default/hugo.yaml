@@ -13,6 +13,137 @@ params:
     name: "今月の情報漏洩事故"
     url: "https://www.google.com/search?q=CC+BCC+%E6%B5%81%E5%87%BA&sca_esv=a420dcef264fc5ad&source=lnt&tbs=qdr:m&sa=X&ved=2ahUKEwi2z5SptZeQAxVScvUHHfIBGHcQpwV6BAgHEA0&biw=1920&bih=991"
 
+  editions:
+    - slug: standard
+      name: "スタンダード"
+      price: "無料"
+      features:
+        smtp: true
+        gmail: true
+        sending: 20
+        import: true
+        export: true
+        injection: true
+        attachment: false
+    - slug: premium
+      name: "プレミアム"
+      price: "10,000円"
+      features:
+        smtp: true
+        gmail: true
+        sending: 200
+        import: true
+        export: true
+        injection: true
+        attachment: true
+  tools:
+    - slug: nocc
+      name: "NoCC:"
+      logo: /images/comparison/NoCC.png
+      features:
+        - slug: installer
+          type: feature
+          label: ダウンロード
+        - slug: smtp
+          type: feature
+          label: SMTP
+        - slug: gmail
+          type: feature
+          label: Gmail
+        - slug: sending
+          type: feature
+          label: "送信専用"
+        - slug: platform
+          type: feature
+          label: Windows
+        - slug: import
+          type: feature
+          label: 宛先インポート
+        - slug: export
+          type: feature
+          label: 宛先エクスポート
+        - slug: injection
+          type: feature
+          label: 本文差込み
+        - slug: cc
+          type: good
+          label: "CC入力欄なし"
+        - slug: method
+          type: good
+          label: "To: で送信"
+        - slug: priciple
+          type: good
+          label: "事故が起きない原理"
+        - slug: management
+          type: good
+          label: "宛先ローカル管理"
+        - slug: cost
+          type: bad
+          label: "有料版:10,000円"
+    - slug: application
+      name: "メールソフト"
+      logo: /images/comparison/mail-app.png
+      features:
+        - slug: installer
+          type: feature
+          label: ダウンロード
+        - slug: smtp
+          type: feature
+          label: SMTP
+        - slug: gmail
+          type: feature
+          label: Gmail
+        - slug: platform
+          type: feature
+          label: "Windows / Mac"
+        - slug: cc
+          type: bad
+          label: "CC入力欄あり"
+        - slug: method
+          type: bad
+          label: "BCC: で送信"
+        - slug: priciple1
+          type: bad
+          label: "ダブルチェック"
+        - slug: priciple2
+          type: bad
+          label: "細心の注意"
+        - slug: management
+          type: good
+          label: "宛先ローカル管理"
+        - slug: cost
+          type: good
+          label: "無料～"
+    - slug: cloud
+      name: "クラウドツール"
+      logo: /images/comparison/cloud-tool.png
+      features:
+        - slug: installer
+          type: feature
+          label: クラウド
+        - slug: sending
+          type: feature
+          label: "送信専用"
+        - slug: management
+          type: bad
+          label: "宛先アップロード"
+        - slug: import
+          type: feature
+          label: 宛先インポート
+        - slug: export
+          type: feature
+          label: 宛先エクスポート
+        - slug: injection
+          type: feature
+          label: 本文差込み
+          type: good
+          label: "CC入力欄なし"
+        - slug: method
+          type: good
+          label: "To: で送信"
+        - slug: cost
+          type: bad
+          label: 4,000円/月～
 menus:
   main:
     - name: "NoCC:メール"

@@ -1,0 +1,30 @@
+<table id="edition-table" class="collapse w-100 mw8 center">
+  <thead class="bg-light-gray">
+    <tr class="lh-copy">
+      <th></th>
+      <th>価格</th>
+      <th>SMTP送信</th>
+      <th>Gmail送信</th>
+      <th>同時送信数</th>
+      <th>インポート</th>
+      <th>エクスポート</th>
+      <th>差込み</th>
+      <th>添付ファイル</th>
+    </tr>
+  </thead>
+  <tbody class="lh-copy">
+    {{ range .Site.Params.editions }}
+      <tr data-slug="{{- .slug -}}" data-name="{{- .name -}}">
+        <th class="name">{{ .name }}</th>
+        <td class="price">{{ .price }}</td>
+        <td class="stmp">{{ if .features.smtp }}●{{ else }}‐{{ end }}</td>
+        <td class="gmail">{{ if .features.gmail }}●{{ else }}‐{{ end }}</td>
+        <td class="sending">{{ .features.sending }}</td>
+        <td class="import">{{ if .features.import }}●{{ else }}‐{{ end }}</td>
+        <td class="export">{{ if .features.export }}●{{ else }}‐{{ end }}</td>
+        <td class="injection">{{ if .features.injection }}●{{ else }}‐{{ end }}</td>
+        <td class="attachment">{{ if .features.attachment }}●{{ else }}‐{{ end }}</td>
+      </tr>
+    {{ end }}
+  </tbody>
+</table>

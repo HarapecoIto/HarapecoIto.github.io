@@ -37,3 +37,7 @@ NoCC: にはそもそも CC を入力する欄が存在しないため、誤操�
 - 送付先のリストの管理に高い気密性が要求される場合
 - 通常の送信と同じ送信サーバーの電子署名が必要な場合
 { .list-bullet-check }
+
+## 比較表
+
+{{< include "components/comparison.html" >}}

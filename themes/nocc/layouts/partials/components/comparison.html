@@ -1,0 +1,16 @@
+<div id="comparison-tabs">
+  {{ range $index, $value := .Site.Params.tools }}
+    <input id="radio-{{- .slug -}}" type="radio" name="tab" {{ if eq $index 0 }}checked="checked"{{ end }}/>
+    <label for="radio-{{- .slug -}}">{{ .name }}</label>
+  {{ end }}
+  {{ range $index, $value := .Site.Params.tools }}
+    <div class="tab-item" data-slug="{{- .slug -}}" data-name="{{- .name -}}">
+      <img src="{{- .logo -}}" alt="{{- .name -}}"/>
+      <ul>
+        {{ range .features }}
+          <li class="{{ .type }}">{{ .label }}</li>
+        {{ end }}
+      </ul>
+    </div>
+  {{ end }}
+</div>

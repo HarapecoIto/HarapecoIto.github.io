@@ -62,3 +62,138 @@ th,
 td:first-child {
   font-weight: bold;
 }
+
+/***************************************************************
+ * Comparison Table
+ **************************************************************/
+#comparison-tabs input {
+  display: none;
+  visibility: hidden;
+}
+#comparison-tabs label {
+  display: block;
+  padding: 0.2em 1em;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+  line-height: 50px;
+  text-align: center;
+  color: #333333;
+  float: left;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+#comparison-tabs input[type="radio"]:checked + label {
+  background-color: #5ab4bd;
+  color: #ffffff;
+}
+#comparison-tabs .tab-item {
+  display: none;
+  visibility: hidden;
+  clear: both;
+  padding: 1em;
+  overflow: hidden;
+  color: #222222;
+  background-color: #f6f6f6;
+}
+#radio-application:checked ~ .tab-item[data-slug="application"],
+#radio-nocc:checked ~ .tab-item[data-slug="nocc"],
+#radio-cloud:checked ~ .tab-item[data-slug="cloud"] {
+  display: block;
+  visibility: visible;
+}
+.tab-item img {
+  float: left;
+  width: 8em;
+  margin: 0 1em 1em 0;
+}
+/* tags */
+.tab-item ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.tab-item li {
+  list-style: none;
+  float: left;
+  position: relative;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 0.5em 0.3em 1em;
+  padding-left: 0.5em;
+  border-radius: 0 5px 5px 0;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.tab-item li::before {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px 18px 18px 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.tab-item li.feature {
+  background-color: #21f31a;
+  color: #ffffff;
+}
+.tab-item li.good {
+  background-color: #3a9dfa;
+  color: #ffffff;
+}
+.tab-item li.bad {
+  background-color: red;
+  color: #ffffff;
+}
+.tab-item li.feature::before {
+  border-color: transparent #21f31a transparent transparent;
+}
+.tab-item li.good::before {
+  border-color: transparent #3a9dfa transparent transparent;
+}
+.tab-item li.bad::before {
+  border-color: transparent red transparent transparent;
+}
+.tab-item li::after {
+  margin-left: 0.5em;
+  margin-right: 0.8em;
+}
+.tab-item li.feature::after {
+  content: "\02714"; /* heavy check mark */
+}
+.tab-item li.good::after {
+  content: "◎";
+}
+.tab-item li.bad::after {
+  content: "✕";
+}
+/***************************************************************
+ * Edition Table
+ **************************************************************/
+#edition-table {
+  width: 100%;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+#edition-table thead {
+  width: auto;
+}
+#edition-table th,
+#edition-table td {
+  background-color: #ffffff;
+  border-bottom: 1px solid #5ab4bd;
+  text-align: center;
+  -ms-writing-mode: lr-tb;
+  writing-mode: horizontal-tb;
+  white-space: nowrap;
+}
+#edition-table th:first-child {
+  color: #333333;
+  border-bottom: 3px solid #5ab4bd;
+  background-color: #d9d9d9;
+}
