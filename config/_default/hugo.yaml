@@ -6,7 +6,6 @@ caches:
   images:
     dir: :cacheDir/images
 
-baseURL: https://example.org/
 languageCode: "ja-jp"
 params:
   copyright: "© 2025 Hrapeco Club"
