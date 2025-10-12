@@ -2,12 +2,10 @@
  * Site Header
  **************************************************************/
 header {
-  aspect-ratio: 16 / 5;
   width: 100%;
   position: relative;
   overflow: hidden;
 }
-
 header::before {
   content: "";
   position: absolute;
@@ -15,7 +13,6 @@ header::before {
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 0;
 }
-
 header h1,
 header h2 {
   position: relative;
