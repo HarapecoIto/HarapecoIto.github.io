@@ -60,7 +60,7 @@
     {{ block "header" . }}{{ partials.Include "site-header.html" .}}{{ end }}
     {{ partials.IncludeCached "site-navigation.html" .}}
     {{ partials.IncludeCached "link-to-google.html" .}}
-    <main class="" role="main">
+    <main class="ph1 ph3-ns ph4-m ph5-l" role="main">
       {{ block "main" . }}{{ end }}
     </main>
     {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}
