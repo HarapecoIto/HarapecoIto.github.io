@@ -5,7 +5,7 @@
   {{ end }}
   {{ range $index, $value := .Site.Params.tools }}
     <div class="tab-item" data-slug="{{- .slug -}}" data-name="{{- .name -}}">
-      <img src="{{- .logo -}}" alt="{{- .name -}}" style="width: 8em"/>
+      <img src="{{- .logo -}}" alt="{{- .name -}}"/>
       <ul>
         {{ range .features }}
           <li class="{{ .type }}">{{ .label }}</li>

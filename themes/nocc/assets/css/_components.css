@@ -107,10 +107,7 @@ td:first-child {
   width: 8em;
   margin-right: 1em;
 }
-#comparison-tabs .tab-item dl {
-  margin: 0;
-  padding: 0;
-}
+
 /* tags */
 .tab-item ul {
   margin: 0;
@@ -183,6 +180,7 @@ td:first-child {
 .tab-item li.bad::after {
   background-color: #ffffff;
 }
+
 /***************************************************************
  * Edition Table
  **************************************************************/
