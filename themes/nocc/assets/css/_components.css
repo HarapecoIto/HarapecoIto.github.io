@@ -97,17 +97,21 @@ td:first-child {
   color: #222222;
   background-color: #f6f6f6;
 }
-#comparison-tabs .tab-item dl {
-  margin: 0;
-  padding: 0;
-}
 #radio-application:checked ~ .tab-item[data-slug="application"],
 #radio-nocc:checked ~ .tab-item[data-slug="nocc"],
 #radio-cloud:checked ~ .tab-item[data-slug="cloud"] {
   display: block;
   visibility: visible;
 }
-
+#comparison-tabs .tab-item img {
+  float: left;
+  width: 8em;
+  margin-right: 1em;
+}
+#comparison-tabs .tab-item dl {
+  margin: 0;
+  padding: 0;
+}
 /***************************************************************
  * Edition Table
  **************************************************************/

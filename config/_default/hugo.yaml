@@ -36,17 +36,20 @@ params:
         export: true
         injection: true
         attachment: true
-  servers:
+  tools:
     - slug: application
       name: "メールソフト"
+      logo: /images/comparison/mail-app.png
       cc: true
       server: SMTP
     - slug: nocc
       name: "NoCC:"
+      logo: /images/comparison/NoCC.png
       cc: false
       server: SMTP/Gmail
     - slug: cloud
       name: "クラウドツール"
+      logo: /images/comparison/cloud-tool.png
       cc: false
       server: Cloud
 
