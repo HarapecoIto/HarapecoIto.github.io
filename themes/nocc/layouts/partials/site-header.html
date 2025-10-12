@@ -1,11 +1,11 @@
 {{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
 <header class="flex justify-center items-center cover bg-center" style="background-image: url('{{ $featured_image }}');">
-  <div class="tl tc-l pv3 pv5-l ph3 ph4-ns">
-    <h1 class="mt0 mt2-ns mb0 mb2-ns f2 f1-ns f-5-l fw7 lh-solid">
+  <div class="tl tc-l pv3 ph3 ph4-ns">
+    <h1 class="mt4 mb3 f2 f1-ns f-5-l fw7 lh-solid">
       <span class="red"><span>No</span><span class="white">CC:</span></span>
       <span class="white">メール</span>
     </h1>
-    <h2 class="mt3 mb4 fw6 f2 f3-ns white measure-wide-l center">
+    <h2 class="mt3 mb5 fw6 f2 f3-ns lh-solid white">
       {{ .Params.description | compare.Default .Site.Params.description }}
     </h2>
   </div>
