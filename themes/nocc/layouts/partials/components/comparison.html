@@ -6,12 +6,11 @@
   {{ range $index, $value := .Site.Params.tools }}
     <div class="tab-item" data-slug="{{- .slug -}}" data-name="{{- .name -}}">
       <img src="{{- .logo -}}" alt="{{- .name -}}" style="width: 8em"/>
-      <dl>
-        <dt>CCフィールド</dt>
-        <dd>{{ if .cc }}あり{{ else }}なし{{ end }}</dd>
-        <dt>サーバー</dt>
-        <dd>{{ .server }}</dd>
-      </dl>
+      <ul>
+        {{ range .features }}
+          <li class="{{ .type }}">{{ .label }}</li>
+        {{ end }}
+      </ul>
     </div>
   {{ end }}
 </div>

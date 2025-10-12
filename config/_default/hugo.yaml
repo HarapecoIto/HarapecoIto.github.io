@@ -40,18 +40,42 @@ params:
     - slug: application
       name: "メールソフト"
       logo: /images/comparison/mail-app.png
-      cc: true
-      server: SMTP
+      features:
+        - slug: smtp
+          type: feature
+          label: SMTP
+        - slug: gmail
+          type: feature
+          label: Gmail
+        - slug: cc
+          type: bad
+          label: "CC入力欄"
     - slug: nocc
       name: "NoCC:"
       logo: /images/comparison/NoCC.png
-      cc: false
-      server: SMTP/Gmail
+      features:
+        - slug: smtp
+          type: feature
+          label: SMTP
+        - slug: gmail
+          type: feture
+          label: Gmail
+        - slug: cc
+          type: bad
+          label: "CC入力欄"
     - slug: cloud
       name: "クラウドツール"
       logo: /images/comparison/cloud-tool.png
-      cc: false
-      server: Cloud
+      features:
+        - slug: smtp
+          type: feature
+          label: SMTP
+        - slug: gmail
+          type: feature
+          label: Gmail
+        - slug: cc
+          type: bad
+          label: "CC入力欄"
 
 menus:
   main:

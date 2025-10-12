@@ -112,6 +112,78 @@ td:first-child {
   margin: 0;
   padding: 0;
 }
+/* tags */
+.tab-item ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tab-item li {
+  position: relative;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  margin: 0 0.5em 0.3em 1em;
+  padding: 0 1em;
+  border-radius: 0 5px 5px 0;
+  text-decoration: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.tab-item li::before {
+  position: absolute;
+  top: 0;
+  left: -18px;
+  content: "";
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 18px 18px 18px 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.tab-item li::after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 2;
+  display: block;
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-radius: 100%;
+}
+.tab-item li.feature {
+  background-color: #21f31a;
+  color: #ffffff;
+}
+.tab-item li.good {
+  background-color: #3a9dfa;
+  color: #ffffff;
+}
+.tab-item li.bad {
+  background-color: red;
+  color: #ffffff;
+}
+.tab-item li.feature::before {
+  border-color: transparent #21f31a transparent transparent;
+}
+.tab-item li.good::before {
+  border-color: transparent #3a9dfa transparent transparent;
+}
+.tab-item li.bad::before {
+  border-color: transparent red transparent transparent;
+}
+.tab-item li.feature::after {
+  background-color: #ffffff;
+}
+.tab-item li.good::after {
+  background-color: #ffffff;
+}
+.tab-item li.bad::after {
+  background-color: #ffffff;
+}
 /***************************************************************
  * Edition Table
  **************************************************************/
