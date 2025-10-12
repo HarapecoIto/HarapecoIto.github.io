@@ -1,6 +1,9 @@
 title: "NoCC: メール"
 theme: nocc
 
+baseURL = "https://Harapeco.Ito.github.io/"
+publishDir: "docs"
+
 baseURL: https://example.org/
 languageCode: "ja-jp"
 params:
