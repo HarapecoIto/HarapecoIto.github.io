@@ -25,22 +25,24 @@ params:
       features:
         smtp: true
         gmail: true
-        sending: 20
+        sending: 20件
         import: true
         export: true
         injection: true
         attachment: false
+        html: false
     - slug: premium
       name: "プレミアム"
       price: "10,000円"
       features:
         smtp: true
         gmail: true
-        sending: 200
+        sending: 200件
         import: true
         export: true
         injection: true
         attachment: true
+        html: true
   tools:
     - slug: nocc
       name: "NoCC:"

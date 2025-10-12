@@ -34,33 +34,6 @@ header h2 {
 }
 
 /***************************************************************
- * Table
- **************************************************************/
-.table-scroll {
-  overflow-x: auto;
-}
-table {
-  border-collapse: collapse;
-  min-width: 700px;
-  font-weight: normal;
-}
-thead tr {
-  background-color: #ffdfdf;
-}
-tbody tr {
-  border-bottom: 1px solid #ffdfdf;
-}
-th,
-td {
-  font-weight: normal;
-  padding: 0.5em 1em;
-}
-th,
-td:first-child {
-  font-weight: bold;
-}
-
-/***************************************************************
  * Comparison Table
  **************************************************************/
 #comparison-tabs input {
@@ -136,7 +109,7 @@ td:first-child {
   transition: 0.2s;
 }
 .tab-item li.feature {
-  background-color: #21f31a;
+  background-color: #20ca1a;
   color: #ffffff;
 }
 .tab-item li.good {
@@ -148,7 +121,7 @@ td:first-child {
   color: #ffffff;
 }
 .tab-item li.feature::before {
-  border-color: transparent #21f31a transparent transparent;
+  border-color: transparent #20ca1a transparent transparent;
 }
 .tab-item li.good::before {
   border-color: transparent #3a9dfa transparent transparent;
@@ -184,13 +157,17 @@ td:first-child {
 #edition-table td {
   background-color: #ffffff;
   border-bottom: 1px solid #5ab4bd;
-  text-align: center;
   -ms-writing-mode: lr-tb;
   writing-mode: horizontal-tb;
   white-space: nowrap;
+  text-align: center;
+  height: 2.5em;
 }
 #edition-table th:first-child {
   color: #333333;
   border-bottom: 3px solid #5ab4bd;
   background-color: #d9d9d9;
+}
+#edition-table thead {
+  width: 35%;
 }

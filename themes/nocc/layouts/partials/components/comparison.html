@@ -1,4 +1,4 @@
-<div id="comparison-tabs">
+<div id="comparison-tabs" class="mt4">
   {{ range $index, $value := .Site.Params.tools }}
     <input id="radio-{{- .slug -}}" type="radio" name="tab" {{ if eq $index 0 }}checked="checked"{{ end }}/>
     <label for="radio-{{- .slug -}}">{{ .name }}</label>
