@@ -8,6 +8,7 @@ caches:
 
 languageCode: "ja-jp"
 params:
+  favicon: /images/favicon/favicon.ico
   copyright: "© 2025 Hrapeco Club"
   author: "Harapeco Club"
   description: "✅電子メールの誤送信による個人情報の漏洩を防ぐ"
