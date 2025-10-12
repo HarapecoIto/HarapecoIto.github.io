@@ -120,7 +120,7 @@ td:first-child {
   height: 36px;
   line-height: 36px;
   margin: 0 0.5em 0.3em 1em;
-  padding: 0 1em;
+  padding-left: 0.5em;
   border-radius: 0 5px 5px 0;
   text-decoration: none;
   -webkit-transition: 0.2s;
@@ -137,18 +137,6 @@ td:first-child {
   border-width: 18px 18px 18px 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-}
-.tab-item li::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 2;
-  display: block;
-  content: "";
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-  border-radius: 100%;
 }
 .tab-item li.feature {
   background-color: #21f31a;
@@ -171,16 +159,19 @@ td:first-child {
 .tab-item li.bad::before {
   border-color: transparent red transparent transparent;
 }
+.tab-item li::after {
+  margin-left: 0.5em;
+  margin-right: 0.8em;
+}
 .tab-item li.feature::after {
-  background-color: #ffffff;
+  content: "\02714"; /* heavy check mark */
 }
 .tab-item li.good::after {
-  background-color: #ffffff;
+  content: "◎";
 }
 .tab-item li.bad::after {
-  background-color: #ffffff;
+  content: "✕";
 }
-
 /***************************************************************
  * Edition Table
  **************************************************************/
