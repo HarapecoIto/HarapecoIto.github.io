@@ -109,7 +109,7 @@ header h2 {
   transition: 0.2s;
 }
 .tab-item li.feature {
-  background-color: #21f31a;
+  background-color: #20ca1a;
   color: #ffffff;
 }
 .tab-item li.good {
@@ -121,7 +121,7 @@ header h2 {
   color: #ffffff;
 }
 .tab-item li.feature::before {
-  border-color: transparent #21f31a transparent transparent;
+  border-color: transparent #20ca1a transparent transparent;
 }
 .tab-item li.good::before {
   border-color: transparent #3a9dfa transparent transparent;
