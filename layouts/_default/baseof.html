@@ -19,9 +19,7 @@
     {{ partials.Include "style.html" . }}
     {{ partials.Include "scripts.html" . }}
 
-    {{ block "favicon" . }}
-      {{ partials.IncludeCached "favicon.html" . }}
-    {{ end }}
+    <link rel="shortcut icon" href="{{ urls.RelURL (.Site.Params.favicon) }}" type="image/x-icon" />
 
     {{ if .Params.canonicalUrl }}
       <link rel="canonical" href="{{ .Params.canonicalUrl }}">
