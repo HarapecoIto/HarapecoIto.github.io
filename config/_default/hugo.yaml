@@ -1,11 +1,6 @@
 title: "NoCC: メール"
-theme: nocc
 
 baseURL: "https://HarapecoIto.github.io/"
-caches:
-  images:
-    dir: :cacheDir/images
-
 languageCode: "ja-jp"
 params:
   favicon: /images/favicon/favicon.ico

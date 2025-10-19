@@ -15,27 +15,11 @@
     {{ else }}
       <meta name="robots" content="noindex, nofollow">
     {{ end }}
-    {{ with .Params.author | compare.Default .Site.Params.author }}
-      {{- $author := . -}}
-      {{- if reflect.IsSlice . -}}
-        {{- $author = collections.Delimit . ", " | transform.Plainify -}}
-      {{- end -}}
-      <meta name="author" content="{{ $author }}">
-    {{ end }}
 
-    {{ partials.Include "site-style.html" . }}
-    {{ partials.Include "site-scripts.html" . }}
+    {{ partials.Include "style.html" . }}
+    {{ partials.Include "scripts.html" . }}
 
-    {{ block "favicon" . }}
-      {{ partials.IncludeCached "site-favicon.html" . }}
-    {{ end }}
-
-    {{ if .OutputFormats.Get "RSS" }}
-    {{ with .OutputFormats.Get "RSS" }}
-      <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-      <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-      {{ end }}
-    {{ end }}
+    <link rel="shortcut icon" href="{{ urls.RelURL (.Site.Params.favicon) }}" type="image/x-icon" />
 
     {{ if .Params.canonicalUrl }}
       <link rel="canonical" href="{{ .Params.canonicalUrl }}">
@@ -51,18 +35,17 @@
     {{ if hugo.IsProduction }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
-	{{ block "head" . }}{{ partials.Include "head-additions.html" . }}{{ end }}
   </head>
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="{{ $.Param "body_classes"  | compare.Default "avenir bg-white"}} {{ $environment }}">
 
-    {{ block "header" . }}{{ partials.Include "site-header.html" .}}{{ end }}
-    {{ partials.IncludeCached "site-navigation.html" .}}
-    {{ partials.IncludeCached "link-to-google.html" .}}
+    {{ partials.IncludeCached "header.html" .}}
+    {{ partials.IncludeCached "navigation.html" .}}
+    {{ partials.IncludeCached "components/to-google.html" .}}
     <main role="main">
       {{ block "main" . }}{{ end }}
     </main>
-    {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}
+    {{ partials.IncludeCached "footer.html" . }}
   </body>
 </html>
