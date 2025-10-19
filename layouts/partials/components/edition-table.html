@@ -18,14 +18,14 @@
       <tr data-slug="{{- .slug -}}" data-name="{{- .name -}}">
         <th>{{ .name }}</th>
         <td>{{ .price }}</td>
-        <td>{{ if .features.smtp }}●{{ else }}―{{ end }}</td>
-        <td>{{ if .features.gmail }}●{{ else }}―{{ end }}</td>
+        <td>{{ if .features.smtp }}<span class="true">●</span>{{ else }}―{{ end }}</td>
+        <td>{{ if .features.gmail }}<span class="true">●</span>{{ else }}―{{ end }}</td>
         <td>{{ .features.sending }}</td>
-        <td>{{ if .features.import }}●{{ else }}―{{ end }}</td>
-        <td>{{ if .features.export }}●{{ else }}―{{ end }}</td>
-        <td>{{ if .features.injection }}●{{ else }}―{{ end }}</td>
-        <td>{{ if .features.attachment }}●{{ else }}―{{ end }}</td>
-        <td>{{ if .features.html }}●{{ else }}―{{ end }}</td>
+        <td>{{ if .features.import }}<span class="true">●</span>{{ else }}―{{ end }}</td>
+        <td>{{ if .features.export }}<span class="true">●</span>{{ else }}―{{ end }}</td>
+        <td>{{ if .features.injection }}<span class="true">●</span>{{ else }}―{{ end }}</td>
+        <td>{{ if .features.attachment }}<span class="true">●</span>{{ else }}―{{ end }}</td>
+        <td>{{ if .features.html }}<span class="true">●</span>{{ else }}―{{ end }}</td>
       </tr>
     {{ end }}
   </tbody>
