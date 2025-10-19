@@ -1,9 +1,15 @@
-{{ with partials.IncludeCached "func/style/GetMainCSS.html" "style/GetMainCSS" }}
-  <link rel="stylesheet" href="{{ .RelPermalink }}" >
-{{ end }}
-
-{{ range .Site.Params.custom_css }}
-  {{ with partials.IncludeCached "func/style/GetResource.html" . . }}{{ else }}
-    <link rel="stylesheet" href="{{ urls.RelURL (.) }}">
+{{ $assets_to_concat := collections.Slice }}
+{{ range collections.Slice "_tachyons.css" "_common.css" "_components.css" }}
+  {{ with resources.Get (fmt.Print "/css/" .) }}
+    {{ $assets_to_concat = $assets_to_concat | collections.Append . }}
   {{ end }}
+{{ end }}
+{{ with $assets_to_concat }}
+  {{ $style := . | resources.Concat "css/main.css" }}
+  {{ $options := dict "enableSourceMap" true "precision" 6 }}
+  {{ $style = $style | css.Sass $options | resources.Minify }}
+  {{ if hugo.IsProduction }}
+    {{ $style = $style | resources.Fingerprint }}
+  {{ end }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" >
 {{ end }}
