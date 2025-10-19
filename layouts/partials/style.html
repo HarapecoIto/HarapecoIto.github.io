@@ -1,21 +1,15 @@
 {{ $assets_to_concat := collections.Slice }}
 {{ range collections.Slice "_tachyons.css" "_common.css" "_components.css" }}
-  {{ with partials.IncludeCached "func/style/GetResource.html" . . }}
+  {{ with resources.Get (fmt.Print "/css/" .) }}
     {{ $assets_to_concat = $assets_to_concat | collections.Append . }}
   {{ end }}
 {{ end }}
-
 {{ with $assets_to_concat }}
-  {{/* We proceed to concatenate the $assets_to_concat */}}
   {{ $style := . | resources.Concat "css/main.css" }}
-
-  {{/* We then use toCSS to add sourceMap and minify */}}
   {{ $options := dict "enableSourceMap" true "precision" 6 }}
   {{ $style = $style | css.Sass $options | resources.Minify }}
-  {{/* We fingerprint in production for cache busting purposes */}}
   {{ if hugo.IsProduction }}
     {{ $style = $style | resources.Fingerprint }}
   {{ end }}
-  {{/* We're ready to set returning variable with resulting resource */}}
   <link rel="stylesheet" href="{{ $style.RelPermalink }}" >
 {{ end }}
