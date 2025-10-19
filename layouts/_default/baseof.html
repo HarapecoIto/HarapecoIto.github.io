@@ -15,26 +15,12 @@
     {{ else }}
       <meta name="robots" content="noindex, nofollow">
     {{ end }}
-    {{ with .Params.author | compare.Default .Site.Params.author }}
-      {{- $author := . -}}
-      {{- if reflect.IsSlice . -}}
-        {{- $author = collections.Delimit . ", " | transform.Plainify -}}
-      {{- end -}}
-      <meta name="author" content="{{ $author }}">
-    {{ end }}
 
     {{ partials.Include "style.html" . }}
     {{ partials.Include "scripts.html" . }}
 
     {{ block "favicon" . }}
       {{ partials.IncludeCached "favicon.html" . }}
-    {{ end }}
-
-    {{ if .OutputFormats.Get "RSS" }}
-    {{ with .OutputFormats.Get "RSS" }}
-      <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-      <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-      {{ end }}
     {{ end }}
 
     {{ if .Params.canonicalUrl }}
@@ -56,12 +42,12 @@
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="{{ $.Param "body_classes"  | compare.Default "avenir bg-white"}} {{ $environment }}">
 
-    {{ block "header" . }}{{ partials.Include "header.html" .}}{{ end }}
+    {{ partials.IncludeCached "header.html" .}}
     {{ partials.IncludeCached "navigation.html" .}}
     {{ partials.IncludeCached "link-to-google.html" .}}
     <main role="main">
       {{ block "main" . }}{{ end }}
     </main>
-    {{ block "footer" . }}{{ partials.IncludeCached "footer.html" . }}{{ end }}
+    {{ partials.IncludeCached "footer.html" . }}
   </body>
 </html>
