@@ -23,11 +23,11 @@
       <meta name="author" content="{{ $author }}">
     {{ end }}
 
-    {{ partials.Include "site-style.html" . }}
-    {{ partials.Include "site-scripts.html" . }}
+    {{ partials.Include "style.html" . }}
+    {{ partials.Include "scripts.html" . }}
 
     {{ block "favicon" . }}
-      {{ partials.IncludeCached "site-favicon.html" . }}
+      {{ partials.IncludeCached "favicon.html" . }}
     {{ end }}
 
     {{ if .OutputFormats.Get "RSS" }}
@@ -51,18 +51,17 @@
     {{ if hugo.IsProduction }}
       {{ template "_internal/google_analytics.html" . }}
     {{ end }}
-	{{ block "head" . }}{{ partials.Include "head-additions.html" . }}{{ end }}
   </head>
 
   {{- $environment := hugo.Environment | compare.Default "production" -}}
   <body class="{{ $.Param "body_classes"  | compare.Default "avenir bg-white"}} {{ $environment }}">
 
-    {{ block "header" . }}{{ partials.Include "site-header.html" .}}{{ end }}
-    {{ partials.IncludeCached "site-navigation.html" .}}
+    {{ block "header" . }}{{ partials.Include "header.html" .}}{{ end }}
+    {{ partials.IncludeCached "navigation.html" .}}
     {{ partials.IncludeCached "link-to-google.html" .}}
     <main role="main">
       {{ block "main" . }}{{ end }}
     </main>
-    {{ block "footer" . }}{{ partials.IncludeCached "site-footer.html" . }}{{ end }}
+    {{ block "footer" . }}{{ partials.IncludeCached "footer.html" . }}{{ end }}
   </body>
 </html>
