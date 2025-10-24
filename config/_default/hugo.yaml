@@ -138,6 +138,7 @@ params:
         - slug: injection
           type: feature
           label: 本文差込み
+        - slug: cc
           type: good
           label: "CC入力欄なし"
         - slug: method
