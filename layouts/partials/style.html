@@ -1,15 +1,48 @@
-{{ $assets_to_concat := collections.Slice }}
-{{ range collections.Slice "_tachyons.css" "_common.css" "_components.css" }}
-  {{ with resources.Get (fmt.Print "/css/" .) }}
-    {{ $assets_to_concat = $assets_to_concat | collections.Append . }}
+{{/* Prefer a Sass entry if present */}}
+{{ with resources.Get "scss/main.scss" }}
+  {{/* If Hugo Extended is available, process SCSS via the Sass pipeline. Otherwise fall back to minifying the raw file. */}}
+  {{ if hugo.IsExtended }}
+    {{ $scss := resources.Get "scss/main.scss" }}
+    {{ $options := dict "enableSourceMap" true "precision" 6 }}
+    {{ $style := $scss | css.Sass $options | resources.Minify }}
+    {{ if hugo.IsProduction }}
+      {{ $style = $style | resources.Fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+  {{ else }}
+    {{/* Fallback for non-extended Hugo: use precompiled CSS */}}
+    {{ $css := resources.Get "css/main.css" | resources.Minify }}
+    {{ if hugo.IsProduction }}
+      {{ $css = $css | resources.Fingerprint }}
+    {{ end }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    <!-- NOTE: SCSS compilation skipped because Hugo Extended is not available. -->
   {{ end }}
-{{ end }}
-{{ with $assets_to_concat }}
-  {{ $style := . | resources.Concat "css/main.css" }}
-  {{ $options := dict "enableSourceMap" true "precision" 6 }}
-  {{ $style = $style | css.Sass $options | resources.Minify }}
-  {{ if hugo.IsProduction }}
-    {{ $style = $style | resources.Fingerprint }}
+{{ else }}
+  {{ $assets := slice }}
+  {{ range (readDir "assets/css") }}
+    {{ if strings.HasPrefix .Name "_" }}
+      {{ with resources.Get (printf "css/%s" .Name) }}
+        {{ $assets = $assets | append . }}
+      {{ end }}
+    {{ end }}
   {{ end }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" >
+  {{ with $assets }}
+    {{ $concated := . | resources.Concat "css/main.css" }}
+    {{ if hugo.IsExtended }}
+      {{ $options := dict }}
+      {{ $style := $concated | css.Sass $options | resources.Minify }}
+      {{ if hugo.IsProduction }}
+        {{ $style = $style | resources.Fingerprint }}
+      {{ end }}
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ else }}
+      {{ $style := $concated | resources.Minify }}
+      {{ if hugo.IsProduction }}
+        {{ $style = $style | resources.Fingerprint }}
+      {{ end }}
+      <!-- NOTE: Hugo Extended not installed; skipped SCSS compilation. -->
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+    {{ end }}
+  {{ end }}
 {{ end }}
